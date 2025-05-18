@@ -11,10 +11,11 @@ body {
 }
 
 main {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 header {
@@ -181,6 +182,77 @@ footer .copyright {
 }
 footer .copyright p {
   margin: 0;
+}
+
+.servicios {
+  padding: 4rem 2rem;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+.servicios h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.servicios .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .servicios .cards {
+    grid-template-columns: 1fr;
+  }
+}
+.servicios .card {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  max-width: 600px;
+  color: #fff;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.servicios .card h3 {
+  color: #2cc7ae;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.servicios .card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.servicios .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  .servicios h2 {
+    font-size: 2rem;
+  }
+  .servicios .card {
+    padding: 1.5rem;
+  }
+  .servicios .card h3 {
+    font-size: 1rem;
+  }
+  .servicios .card p {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 576px) {
+  .servicios {
+    padding: 2rem 1rem;
+  }
+  .servicios .cards {
+    grid-template-columns: 1fr;
+  }
+  .servicios .card {
+    padding: 1.25rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

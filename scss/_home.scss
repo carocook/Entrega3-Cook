@@ -29,7 +29,7 @@
     padding: 0 1rem;
     line-height: 1.3;
 
-    @media (max-width: 768px) {
+    @media (max-width: variables.$breakpoint-md) {
       font-size: 2.2rem;
       margin-top: 10vh;
     }
@@ -52,7 +52,7 @@
       line-height: 1.4;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: variables.$breakpoint-md) {
       padding: 30px 20px;
     }
   }

@@ -53,7 +53,7 @@ header {
   }
 
   // Responsivo
-  @media (max-width: 768px) {
+  @media (max-width: variables.$breakpoint-md) {
     .menu-icon {
       display: flex;
     }
