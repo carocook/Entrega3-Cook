@@ -35,7 +35,6 @@ header {
     }
   }
 
-  // Menú de navegación
   nav.menu {
     display: flex;
 
@@ -52,7 +51,6 @@ header {
     }
   }
 
-  // Responsivo
   @media (max-width: variables.$breakpoint-md) {
     .menu-icon {
       display: flex;
@@ -74,7 +72,7 @@ header {
       }
     }
 
-    // Mostrar menú si checkbox está tildado
+    // Muestra menú si checkbox está tildado
     #menu-toggle:checked + .menu-icon + nav.menu {
       display: flex;
     }

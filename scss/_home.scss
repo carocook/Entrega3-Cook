@@ -52,7 +52,6 @@
       line-height: 1.4;
     }
 
-    // Animación fadeUp
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s ease-out forwards;
@@ -64,7 +63,6 @@
   }
 }
 
-// Animación fuera del selector .home
 @keyframes fadeUp {
   to {
     opacity: 1;
