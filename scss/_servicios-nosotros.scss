@@ -1,6 +1,32 @@
 @use "variables";
 
-// Estilos base comunes para cards y cards en servicios y nosotros
+@mixin card-base($padding: 2rem, $radius: 1.5rem, $max-width: 600px) {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: $radius;
+  padding: $padding;
+  color: variables.$text-color;
+  max-width: $max-width;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: variables.$primary-color;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .servicios,
 .nosotros {
   padding: 4rem 2rem;
@@ -18,37 +44,12 @@
     gap: 2rem;
     justify-items: center;
 
-    // Grid general para cards, que se adapta por sección abajo
     .card {
-      background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      color: variables.$text-color;
-      max-width: 600px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-      h3 {
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: variables.$primary-color;
-        font-size: 1.2rem;
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
+      @include card-base();
     }
   }
 }
 
-// Específico para servicios
 .servicios {
   .cards {
     grid-template-columns: repeat(2, 1fr);
@@ -59,7 +60,6 @@
   }
 }
 
-// Específico para nosotros
 .nosotros {
   .cards {
     grid-template-columns: 1fr;
@@ -68,16 +68,11 @@
     gap: 3rem;
 
     .card-full {
-      background-color: rgba(255, 255, 255, 0.3);
-      border-radius: 2rem;
-      padding: 2.5rem 2rem;
-      color: variables.$text-color;
+      @include card-base(2.5rem 2rem, 2rem, 700px);
       font-size: 1.1rem;
       line-height: 1.6;
       border: none;
-      max-width: 700px;
       margin: 0 auto;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     .card-group {
@@ -95,9 +90,60 @@
       }
     }
   }
+  .mini-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .mini-card {
+    background-color: variables.$background-dark;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    color: variables.$primary-color;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
 }
 
-// Media queries comunes para responsividad
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    variables.$primary-color,
+    variables.$text-color
+  );
+  background-size: 200% auto;
+  background-position: 0% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: fillText 2s ease forwards;
+
+  @media (max-width: variables.$breakpoint-md) {
+    font-size: 2rem;
+  }
+}
+
+@keyframes fillText {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
 @media (max-width: variables.$breakpoint-md) {
   .servicios,
   .nosotros {
@@ -126,7 +172,7 @@
     padding: 2rem 1rem;
 
     .cards {
-      grid-template-columns: 1fr !important;
+      grid-template-columns: 1fr;
     }
 
     .card,
