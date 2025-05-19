@@ -7,3 +7,27 @@ main {
 html {
   scroll-behavior: smooth;
 }
+
+.scroll-to-nav {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: variables.$primary-color;
+  color: variables.$text-color;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 3.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+
+  &:hover {
+    background-color: variables.$primary-color;
+  }
+}

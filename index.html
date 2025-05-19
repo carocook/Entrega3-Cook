@@ -32,7 +32,7 @@
       </label>
 
       <!-- Menú de navegación -->
-      <nav class="menu">
+      <nav class="menu" id="nav">
         <a href="#home">Home</a>
         <a href="#servicios">Servicios</a>
         <a href="#nosotros">Nosotros</a>
@@ -106,7 +106,7 @@
           </div>
         </div>
       </section>
-      <section id="nosotros" class="nosotros">
+      <section class="nosotros" id="nosotros">
         <h2 class="section-title">Nosotros</h2>
         <div class="cards">
           <div class="card-full">
@@ -154,9 +154,32 @@
           </div>
         </div>
       </section>
-
-      <section id="contacto"></section>
+      <section class="contacto" id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <p class="descripcion">
+          Transformá tus ideas en soluciones reales. Dejanos tu mensaje y te
+          acompañamos en el proceso.
+        </p>
+        <form class="form">
+          <input type="text" placeholder="Nombre" required />
+          <input type="text" placeholder="Apellido" required />
+          <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Asunto" required />
+          <textarea placeholder="Mensaje" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <p class="alternative-contact">
+          Sino podés contactarnos por estos medios:
+        </p>
+        <div class="info-contacto">
+          <p><i class="fas fa-envelope icon"></i> info@bulltech.com.ar</p>
+          <p><i class="fas fa-phone icon"></i> +54 9 11234 5678</p>
+        </div>
+      </section>
     </main>
+    <a href="#nav" class="scroll-to-nav" title="Ir al menú"
+      ><i class="fas fa-chevron-up"></i
+    ></a>
     <footer>
       <div class="footer-content">
         <p>
